@@ -1,0 +1,28 @@
+html
+    head
+        meta(charset="UTF-8")
+        link(href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous")
+        title Motores de Plantilla Pug
+
+    body.container.mt-3
+        div.jumbotron
+            h3.text-start.mt-5.mb-5.fw-bolder.text-primary Listado de Productos
+            div.table-responsive
+            table.table.table-dark.table-hover.container
+                thead
+                tr
+                    th ID
+                    th Producto
+                    th Precio
+                    th Imagen
+                tbody
+                    each n in productos
+                        tr
+                            th= n.id
+                            th= n.title
+                            th= n.price
+                            th
+                                img(width="40",height="40",src= n.thumbnail , alt="image")
+                    else
+                        h3.alert.alert-danger No se encontraron productos
+            a(href="/" , class="btn btn-info mt-3 mb-5") Volver al Formulario
